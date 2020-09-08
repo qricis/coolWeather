@@ -56,7 +56,7 @@ public class AutoUpdateService extends Service {
             Weather weather = Utility.handleWeatherResponse(weatherString);
             String weatherId = weather.mBasic.weatherId;
 
-            String weatherUrl = "heep://guolin.tech/api/weather?cityid=" + weatherId + "&key=08f828b5a3ec4905a29156bf5f29136f";
+            String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=08f828b5a3ec4905a29156bf5f29136f";
             HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
                 public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -81,7 +81,7 @@ public class AutoUpdateService extends Service {
      * 更新必应每日一图
      * */
     private void updateBingPic() {
-        String requestBingPic = "heep://guolin.tech/api/bing_pic";
+        String requestBingPic = "http://guolin.tech/api/bing_pic";
         HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
